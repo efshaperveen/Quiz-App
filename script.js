@@ -18,19 +18,19 @@ const quizData = [
 ];
 
 // Variables for Quiz
-let currentQuestionIndex = 0; // To track the current question index
-let score = 0; // To track the user's score
-let selectedAnswers = []; // To store user's selected answers
-let leaderboard = []; // To store leaderboard scores
-let totalTime = 120; // Total quiz time in seconds (2 minutes)
-let timerInterval; // Variable to store timer interval
+let currentQuestionIndex = 0; 
+let score = 0; 
+let selectedAnswers = []; 
+let leaderboard = []; 
+let totalTime = 120; 
+let timerInterval; 
 
 // Function to start the quiz
 function startQuiz() {
-    document.getElementById('instructions-container').style.display = 'none'; // Hide instructions
-    document.querySelector('.quiz-container').style.display = 'block'; // Show quiz container
-    loadQuestion(); // Load the first question
-    startTimer(); // Start the timer
+    document.getElementById('instructions-container').style.display = 'none'; 
+    document.querySelector('.quiz-container').style.display = 'block'; 
+    loadQuestion(); 
+    startTimer(); 
 }
 
 // Function to start the timer
@@ -40,10 +40,10 @@ function startTimer() {
     // Timer interval set to 1 second
     timerInterval = setInterval(() => {
         if (totalTime <= 0) {
-            clearInterval(timerInterval); // Stop timer if time is up
-            submitQuiz(); // Auto-submit quiz
+            clearInterval(timerInterval); 
+            submitQuiz(); 
         } else {
-            totalTime--; // Decrease total time by 1 second
+            totalTime--; 
             // Format time as MM:SS
             const minutes = Math.floor(totalTime / 60);
             const seconds = totalTime % 60;
@@ -58,11 +58,11 @@ function loadQuestion() {
     const options = document.querySelectorAll('.option-btn');
 
     // Update the question text and options
-    questionElement.textContent = quizData[currentQuestionIndex].question; // Set question text
+    questionElement.textContent = quizData[currentQuestionIndex].question; t
     options.forEach((btn, index) => {
-        btn.textContent = quizData[currentQuestionIndex].options[index]; // Set option text
-        btn.disabled = false; // Enable the buttons for selection
-        btn.style.backgroundColor = '#3498db'; // Reset button color to default (Blue)
+        btn.textContent = quizData[currentQuestionIndex].options[index];
+        btn.disabled = false; 
+        btn.style.backgroundColor = '#3498db'; 
     });
 
     document.getElementById('next-btn').style.display = currentQuestionIndex === quizData.length - 1 ? 'none' : 'inline-block';
@@ -71,23 +71,23 @@ function loadQuestion() {
 
 // Function to handle user's answer selection
 function checkAnswer(selectedOptionIndex) {
-    selectedAnswers[currentQuestionIndex] = selectedOptionIndex; // Store user's selected answer
+    selectedAnswers[currentQuestionIndex] = selectedOptionIndex;
 
     // Highlight the selected option and disable all buttons after selection
     const options = document.querySelectorAll('.option-btn');
     options.forEach((btn, index) => {
         // Correct answer: Green, Wrong answer: Red
         if (quizData[currentQuestionIndex].answer === index) {
-            btn.style.backgroundColor = '#27ae60'; // Correct answer highlighted in green
+            btn.style.backgroundColor = '#27ae60';
         } else if (selectedOptionIndex === index) {
-            btn.style.backgroundColor = '#e74c3c'; // Wrong answer highlighted in red
+            btn.style.backgroundColor = '#e74c3c';
         }
-        btn.disabled = true; // Disable all options after selection
+        btn.disabled = true; 
     });
 
     // Calculate score if the answer is correct
     if (quizData[currentQuestionIndex].answer === selectedOptionIndex) {
-        score += 10; // Increment score by 10 for each correct answer
+        score += 10; // 
     }
 }
 
@@ -101,8 +101,8 @@ function nextQuestion() {
 
 // Function to submit the quiz
 function submitQuiz() {
-    clearInterval(timerInterval); // Stop the timer
-    showLeaderboard(); // Show leaderboard after quiz submission
+    clearInterval(timerInterval); 
+    showLeaderboard();
 }
 
 // Function to show leaderboard
@@ -110,10 +110,10 @@ function showLeaderboard() {
     document.querySelector('.quiz-container').style.display = 'none';
     document.querySelector('.leaderboard-container').style.display = 'block';
 
-    leaderboard.push(score); // Add the user's score to the leaderboard
+    leaderboard.push(score); 
 
     const leaderboardElement = document.getElementById('leaderboard');
-    leaderboardElement.innerHTML = ''; // Clear previous leaderboard
+    leaderboardElement.innerHTML = '';
 
     // Sort and display leaderboard scores
     leaderboard.sort((a, b) => b - a);
@@ -131,7 +131,7 @@ function restartQuiz() {
     score = 0;
     selectedAnswers = [];
     totalTime = 120; // Reset total time
-    clearInterval(timerInterval); // Clear any existing timer
+    clearInterval(timerInterval); 
     document.querySelector('.leaderboard-container').style.display = 'none';
-    document.getElementById('instructions-container').style.display = 'block'; // Show instructions again
+    document.getElementById('instructions-container').style.display = 'block'; 
 }
