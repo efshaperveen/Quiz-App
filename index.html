@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Instructions Container -->
+    <div id="instructions-container" class="instructions-container">
+        <h2>Welcome to the Quiz</h2>
+        <p>Before you start the quiz, please read the instructions below:</p>
+        <ul>
+            <li>1. You will be presented with multiple-choice questions, one at a time.</li>
+            <li>2. Select the correct answer by clicking on one of the four options.</li>
+            <li>3. Use the "Next" button to navigate through the quiz.</li>
+            <li>4. You have a limited amount of time to complete the quiz. Keep an eye on the timer.</li>
+            <li>5. You have to click Submit button after complting the quiz.</li>
+            <li>6. Your score will be displayed at the end, along with the leaderboard.</li>
+        </ul>
+        <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <!-- Timer Display -->
+        <div id="timer" class="timer">Time Left: 02:00</div> <!-- Display total time initially as 2 minutes -->
+        
+        <h2 id="question">Question will appear here</h2>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(0)">Option 1</button>
+            <button class="option-btn" onclick="checkAnswer(1)">Option 2</button>
+            <button class="option-btn" onclick="checkAnswer(2)">Option 3</button>
+            <button class="option-btn" onclick="checkAnswer(3)">Option 4</button>
+        </div>
+        <!-- next Button -->
+        <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+        <!-- Submit Button -->
+        <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+    
+    <!-- Leaderboard Section -->
+    <div id="leaderboard-container" class="leaderboard-container">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard">
+            <!-- Leaderboard will be populated here -->
+        </ul>
+        <button id="restart-btn" onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

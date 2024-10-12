@@ -1,0 +1,156 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(0,0,33);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Quiz App Main Containers */
+.instructions-container, .quiz-container, .leaderboard-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(15, 20, 44, 0.1);
+    width: 400px; /* Set fixed width for quiz containers */
+    max-width: 90%; /*Responsive max width */
+    text-align: center;
+}
+
+/* Hide quiz and leaderboard containers initially */
+.quiz-container, .leaderboard-container {
+    display: none;
+}
+
+/* Instructions Container Styling */
+.instructions-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.instructions-container p, .instructions-container ul {
+    text-align: left; /* Align text to left for instructions */
+}
+
+.instructions-container ul {
+    padding-left: 20px; /* Add padding for list */
+}
+
+.instructions-container ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Start Button Styling */
+#start-btn {
+    background: #3498db; /* Blue color background */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;/* Smooth background transition*/
+}
+
+#start-btn:hover {
+    background: #2980b9; /* Darker shade on hover */
+}
+
+/* Quiz Container Styles */
+.quiz-container h2 {
+    font-size: 24px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column; /* Arrange options vertically */
+    margin: 20px 0;
+}
+
+/* Option Buttons Styling */
+.option-btn {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin: 5px 0; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.option-btn:hover {
+    background: #2980b9; /* Darker shade on hover */
+}
+#next-btn{
+    background: #053758;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 5px 0 5px;
+    transition: background 0.3s;
+}
+#next-btn:hover {
+    background: #2980b9;
+}
+
+/* Navigation and Submit Buttons */
+#submit-btn {
+    background: #2ecc71;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 5px 0 5px;
+    transition: background 0.3s;
+}
+
+#submit-btn:hover {
+    background: #27ae60; /* Darker green shade on hover */
+}
+
+/* Leaderboard Styles */
+#leaderboard {
+    list-style-type: none;
+    padding: 0;
+}
+
+#leaderboard li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #ecf0f1; /* Light grey background for leaderboard */
+    border-radius: 5px;
+}
+
+/* Restart Button Styling */
+#restart-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+#restart-btn:hover {
+    background: #c0392b; /* Darker red shade on hover */
+}
+/* Timer Styling */
+.timer {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f1c40f;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
